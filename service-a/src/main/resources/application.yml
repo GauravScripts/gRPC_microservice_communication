@@ -1,0 +1,12 @@
+# service-a/src/main/resources/application.yml
+# service-a/src/main/resources/application.yml
+grpc:
+  client:
+    service-b-grpc:
+      address: 'static://localhost:9090'
+
+server:
+  port: 8080
+spring:
+    application:
+        name: service-a
