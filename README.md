@@ -133,7 +133,7 @@ mvn -version
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/grpc-rest-demo.git
+git clone https://github.com/GauravScripts/gRPC_microservice_communication.git
 cd grpc-rest-demo
 ```
 
@@ -676,9 +676,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
-- Twitter: [@yourhandle](https://twitter.com/yourhandle)
+- GitHub: [@gauravscripts](https://github.com/gauravscripts)
+
 
 ---
 
