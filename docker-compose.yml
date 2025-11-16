@@ -1,0 +1,34 @@
+services:
+  service-b:
+    build:
+      context: ./service-b
+      dockerfile: Dockerfile
+    container_name: service-b
+    ports:
+      - "8081:8081"  # HTTP/REST port
+      - "9090:9090"  # gRPC port
+    networks:
+      - grpc-network
+    environment:
+      - SPRING_APPLICATION_NAME=service-b
+      - SERVER_PORT=8081
+
+  service-a:
+    build:
+      context: ./service-a
+      dockerfile: Dockerfile
+    container_name: service-a
+    ports:
+      - "8080:8080"  # HTTP/REST port
+    networks:
+      - grpc-network
+    environment:
+      - SPRING_APPLICATION_NAME=service-a
+      - SERVER_PORT=8080
+      - GRPC_CLIENT_SERVICE_B_GRPC_ADDRESS=static://service-b:9090
+    depends_on:
+      - service-b
+
+networks:
+  grpc-network:
+    driver: bridge
